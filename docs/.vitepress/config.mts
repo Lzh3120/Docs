@@ -17,7 +17,8 @@ export default defineConfig({
           text: '软件设计师',
           items: [
             { text: '计算机基础', link: '/soft-test/计算机基础' },
-            { text: '编程基础', link: '/api-examples' }
+            { text: '编程基础', link: '/api-examples' },
+            { text: '操作系统知识', link:'/soft-test/操作系统知识'}
           ]
         }
       ]

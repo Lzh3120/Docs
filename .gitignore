@@ -2,8 +2,8 @@
 /node_modules
 
 # VitePress Build output and cache
-/.vitepress/dist
-/.vitepress/cache
+*/.vitepress/dist
+*/.vitepress/cache
 
 # Local environment files (if you have them)
 .env.local
