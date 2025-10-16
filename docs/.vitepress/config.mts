@@ -8,7 +8,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
+      { text: 'AI', link: '/AI' },
       { text: '软考', link: '/soft-test' },
+      { text: '菜谱', link: '/菜谱' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
     sidebar: {
