@@ -1,5 +1,10 @@
 import { defineConfig } from 'vitepress'
 
+import { generateNav, generateSiderbar } from './navSidebar'
+
+const nav = generateNav(process.cwd())
+const sidebar = generateSiderbar(process.cwd())
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "LzhPro私人笔记",
@@ -7,35 +12,13 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '主页', link: '/' },
-      { text: 'AI', link: '/AI' },
-      { text: '软考', link: '/soft-test' },
-      { text: '菜谱', link: '/菜谱' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '首页', link: '/' },
+      ...nav,
+      { text: 'GitHub', link: 'https://github.com/Gar-b-age/CookLikeHOC' },
     ],
-    sidebar: {
-      '/soft-test/':[
-        {
-          text: '软件设计师',
-          items: [
-            { text: '计算机基础', link: '/soft-test/计算机基础' },
-            { text: '编程基础', link: '/api-examples' },
-            { text: '操作系统知识', link:'/soft-test/操作系统知识'}
-          ]
-        }
-      ]
+    sidebar:{
+      ...sidebar
     },
-
-    /*sidebar1: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],*/
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
