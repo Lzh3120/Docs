@@ -123,17 +123,16 @@ function generateSidebar(
 
   for (const item of files) {
     const fileName = item.name;
-    if(EXCLUDED_DIRS.has(fileName)) continue;
     if(item.isFile()){
       items.push({
-        'text': titleFromName(fileName),
+        'text': fileName === 'index.md'?'首页':titleFromName(fileName),
         'link': path.join(currentBaseLink, titleFromName(fileName))
       });
     }
     if(item.isDirectory()){
       const list = generateSidebar(fullPath, fileName, path.join(currentBaseLink, fileName));
       items.push({
-        'text': titleFromName(fileName),
+        'text': fileName === 'index.md'?'首页':titleFromName(fileName),
         'items': list,
       });
     }
